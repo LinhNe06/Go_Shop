@@ -1,0 +1,17 @@
+# Dependencies & build output
+node_modules/
+frontend/node_modules/
+frontend/dist/
+backend/server
+
+# Secrets
+.env
+backend/.env
+
+# User uploads
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# Miscellaneous
+.DS_Store
+*.log
