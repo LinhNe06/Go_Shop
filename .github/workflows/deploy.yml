@@ -65,10 +65,10 @@ jobs:
         run: |
           curl -s -X POST "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" \
             -d chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" \
-            --data-urlencode text="✅ go-shop deploy thành công — https://go-shop.404hz.me"
+            --data-urlencode text="go-shop deploy thành công — https://go-shop.404hz.me"
       - name: Telegram — deployment failed
         if: failure()
         run: |
           curl -s -X POST "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" \
             -d chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" \
-            --data-urlencode text="❌ go-shop deploy thất bại: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+            --data-urlencode text="go-shop deploy thất bại: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
